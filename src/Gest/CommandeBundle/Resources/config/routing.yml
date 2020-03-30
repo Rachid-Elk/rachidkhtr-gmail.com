@@ -1,0 +1,11 @@
+gest_commande_commande:
+    resource: "@GestCommandeBundle/Resources/config/routing/commande.yml"
+    prefix:   /commande
+
+gest_commande_produit:
+    resource: "@GestCommandeBundle/Resources/config/routing/produit.yml"
+    prefix:   /produit
+
+gest_commande_homepage:
+    path:     /
+    defaults: { _controller: GestCommandeBundle:Default:index }

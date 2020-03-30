@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div class="container">
+    <div class="card bg-info text-white text-center"><h1 >Liste des Produits</h1></div></div><br><br>
+    
+
+    <table class="table table-striped text-center  " >
+        <thead class="text-warning" >
+            <tr  >
+                <th ><h5><b>Id</b></h5></th>
+                <th ><h5><b>Designation</b></h5></th>
+                <th ><h5><b>Reference</b></h5></th>
+                <th ><h5><b>Categorie</b></h5></th>
+                <th colspan=2><h5><b>Actions</b></h5></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
+                <td>{{ produit.designation }}</td>
+                <td>{{ produit.reference }}</td>
+                <td>{{ produit.categorie }}</td>
+                <td>
+                    <!--ul>
+                        <li>
+                            <a href="{{ path('produit_show', { 'id': produit.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('produit_edit', { 'id': produit.id }) }}">edit</a>
+                        </li>
+                    </ul-->
+
+                    <a  class="btn btn-info"  href="{{ path('produit_show', { 'id': produit.id }) }}">
+                         <i class="fa fa-eye"></i>
+                    </a>
+                    <a  class="btn btn-success"  href="{{ path('produit_edit', { 'id': produit.id }) }}">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                <a  class="btn btn-outline-primary"  href="{{ path('produit_new') }}">
+            <i class="fa fa-plus"></i>
+            Ajouter</a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    gest_commande.example:
+#        class: Gest\CommandeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

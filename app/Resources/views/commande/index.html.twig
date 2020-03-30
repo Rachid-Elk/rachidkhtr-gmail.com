@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <div class="card bg-info text-white text-center"><h1 >Liste des Commandes</h1></div></div><br><br>
+    <table class="table table-striped text-center "> 
+        <thead >
+            <tr  >
+                <th ><h5><b>Id </b></h5></th>
+                <th ><h5><b> Date commande </b></h5></th>
+                <th > <h5><b> Somme </b></h5></th>
+                <th ><h5><b> Actions</b></h5> </th>
+            </tr>
+        </thead>
+        <tbody border = 2>
+        {% for commande in commandes %}
+            <tr >
+                <td><a href="{{ path('commande_show', { 'id': commande.id }) }}">{{ commande.id }}</a></td>
+                <td>{% if commande.dateCommande %}{{ commande.dateCommande|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ commande.somme }}</td>
+                <td  >
+                    <a  class="btn btn-info"  href="{{ path('commande_show', { 'id': commande.id }) }}">
+                         <i class="fa fa-eye"></i>
+                    </a>
+                    <a  class="btn btn-success"  href="{{ path('commande_edit', { 'id': commande.id }) }}">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <!--ul>
+                        <li>
+                            <a href="{{ path('commande_show', { 'id': commande.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('commande_edit', { 'id': commande.id }) }}">edit</a>
+                        </li>
+                    </ul-->
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a  class="btn btn-outline-primary"  href="{{ path('commande_new') }}">
+            <i class="fa fa-plus"></i>
+            Ajouter</a>
+            <!--a href="{{ path('commande_new') }}">Create a new commande</a-->
+        
+    
+    </div>
+{% endblock %}

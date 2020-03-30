@@ -1,0 +1,19 @@
+gest_commande:
+    resource: "@GestCommandeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+grh:
+    resource: "@grhBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ensias_grh:
+    resource: "@ensiasGRHBundle/Resources/config/routing.yml"
+    prefix:   /zellou
+
+ensias_grh_employe:
+    resource: "@ensiasGRHBundle/Resources/config/routing/employe.yml"
+    prefix:   /employe
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel='stylesheet' href="{{ asset('bootstrap.min.css') }}" />
+        <link rel='stylesheet' href="{{ asset('bootstrap.css') }}" />
+        <link rel='stylesheet' href="{{ asset('css/all.min.css') }}" />
+        <!-- -->
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+        <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark" >
+  <!-- Brand/logo -->
+ <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  <a class="navbar-brand" href="#">
+    <img src="images/img.jpg" alt="logo" style="width:40px;">
+  </a>
+  
+  <!-- Links -->
+ 
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-white">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ path('commande_index') }}"><h4><b>Commande</b></h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ path('produit_index') }}"><h4><b>Produit</b></h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Login.php"><h4><b>LogOut</b></h4></a>
+    </li>
+  </ul>
+   
+ <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+</nav><br><br>
+
+
+           <!--ul  class="nav nav-tabs nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gestion Commande</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('produit_index') }}">Produit</a>
+                </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('commande_index') }}">Commande</a>
+                </li>
+
+            </ul--><br>
+
+
+
+             <div class="container text-center">
+          {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

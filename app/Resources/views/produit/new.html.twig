@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container ">
+    <div class="card bg-info text-white text-center"><h1 >nouvelle Produit</h1></div></div><br>
+    
+            {{ form_start(form) }}
+            <div class="d-inline-block col-md-9 col-xs-6 col-md-offset-3  text-left">
+                {{ form_widget(form) }}</div> <br><div class="d-inline-block">
+                    <button  class="btn btn-outline-success"  type="submit" value="Create">
+                        <i class="fa fa-save"></i>
+                            Ajouter
+                    </button> 
+
+            {{ form_end(form) }}
+
+            <a  class="btn btn-outline-primary"  href="{{ path('produit_index') }}">
+                <i class="fa fa-table"></i>
+                        Liste P
+                    
+            </a>  <br>      
+{% endblock %}

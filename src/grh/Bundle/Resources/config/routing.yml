@@ -1,0 +1,7 @@
+grh_tache:
+    resource: "@grhBundle/Resources/config/routing/tache.yml"
+    prefix:   /tache
+
+grh_homepage:
+    path:     /
+    defaults: { _controller: grhBundle:Default:index }

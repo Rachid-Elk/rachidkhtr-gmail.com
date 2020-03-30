@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Employes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Ddn</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employe in employes %}
+            <tr>
+                <td><a href="{{ path('employe_show', { 'id': employe.id }) }}">{{ employe.id }}</a></td>
+                <td>{{ employe.nom }}</td>
+                <td>{{ employe.adresse }}</td>
+                <td>{% if employe.ddn %}{{ employe.ddn|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ employe.genre }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('employe_show', { 'id': employe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('employe_edit', { 'id': employe.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('employe_new') }}">Create a new employe</a>
+        </li>
+    </ul>
+{% endblock %}

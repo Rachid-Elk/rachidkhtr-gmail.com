@@ -1,0 +1,11 @@
+ensias_grh_employe:
+    resource: "@ensiasGRHBundle/Resources/config/routing/employe.yml"
+    prefix:   /employe
+
+ensias_grh_homepage:
+    path:     /
+    defaults: { _controller: ensiasGRHBundle:Default:index }
+
+ensias_grh_hometest:
+    path:     /zel/{var}/
+    defaults: { _controller: ensiasGRHBundle:Test:test }

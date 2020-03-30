@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <div class="container text-center">
+    <div class="card bg-info text-white text-center"><h1 >Produit</h1></div><br><br>
+
+     <table class="table text-center" border=3>
+        <tbody class="text-center">
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ produit.designation }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ produit.reference }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ produit.categorie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <div class="d-inline-block ">
+            <a class="btn btn-outline-info "  href="{{ path('produit_index') }}">
+                <i class="fa fa-table"></i>
+                Listes
+            </a>
+        </div>
+        <div class="d-inline-block">
+            <a  class="btn btn-outline-success"  href="{{ path('produit_edit', { 'id': produit.id }) }}">
+                <i class="fa fa-edit"></i>
+                 Edit
+            </a>
+        </div>
+        <div class="d-inline-block">
+            {{ form_start(delete_form) }}
+                <!--input type="submit" -->
+                <button class="btn btn-outline-danger" 
+                onclick="return confirm('Etes vous sure pour Supprimer ?');" type="submit" value="Delete">
+                <i class="fa fa-trash"></i>
+                 Supprimer</button>
+            {{ form_end(delete_form) }}
+        </div>  
+    </div>
+{% endblock %}
